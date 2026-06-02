@@ -1,0 +1,115 @@
+.rts-cta-wrapper {
+    background: #22201F;
+    border-radius: 30px;
+    overflow: hidden;
+
+    .cta-content-area {
+        padding: 80px 97px
+    }
+
+    .cta-image-area {
+        position: relative;
+        z-index: 1;
+
+        .cta-circle {
+            min-width: 168px;
+            max-width: 168px;
+            height: 168px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--gradient-primary);
+            border: 1px solid var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .cta-talk {
+                position: absolute;
+                animation: spin 9s linear infinite;
+            }
+
+            i {
+                color: var(--color-white);
+            }
+        }
+
+        .rts-btn.btn-primary {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            background: var(--color-white);
+            color: var(--color-heading-1);
+
+            .icon {
+                background: var(--gradient-primary);
+            }
+
+            &:hover {
+                color: var(--color-white);
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.media-entertainment-image {
+    position: relative;
+    z-index: 1;
+
+    .image-wrapper {
+        border-radius: 30px;
+    }
+
+    img {
+        border-radius: 30px;
+    }
+
+    .media-sm {
+        border-radius: 17px;
+        position: absolute;
+        bottom: 50px;
+        right: -40%;
+    }
+}
+
+.media-entertainment-content {
+    padding-left: 25px;
+
+    .section-title-area {
+        margin-bottom: 70px;
+    }
+
+    .media-entertainment-info {
+        margin-left: 145px;
+
+        .media-entertainment-item-info {
+            &:not(:last-child) {
+                margin-bottom: 65px;
+            }
+
+            .title {
+                font-size: 24px;
+                line-height: 1;
+                margin-bottom: 20px;
+            }
+
+            .desc {
+                max-width: 577px;
+            }
+        }
+    }
+}

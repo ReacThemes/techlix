@@ -1,0 +1,113 @@
+/*=================Scss Indexing=============
+01. variables;
+02. typography;
+03. spacing;
+04. reset;
+05. forms;
+06. mixins;
+07. shortcode;
+08. text-animation;
+09. sal;
+10. header;
+11. nav;
+12. mobile-menu;
+13. common;
+14. button;
+15. banner;
+16. breadcrumb;
+17. brand;
+18. heading;
+19. pricing;
+20. service;
+21. about;
+22. working-process;
+23. counterup;
+24. testimonials;
+25. blog;
+26. blog-inner;
+27. subscribe;
+28. footer;
+29. features;
+30. social;
+31. back-to-top;
+32. appoinment;
+33. team;
+34. cta;
+35. contact;
+36. seo-optimization;
+37. portfolio;
+38. case-studies;
+39. faq;
+40. business-solution;
+41. why-choose;
+42. gallery;
+43. video;
+44. customer;
+45. image;
+46. rtl;
+47. responsive;
+48. responsive-rtl;
+
+
+
+
+==============================================  */
+
+
+/* Default  */
+
+@import'default/variables';
+@import'default/typography';
+@import'default/spacing';
+@import'default/reset';
+@import'default/forms';
+@import'default/mixins';
+@import'default/shortcode';
+@import'default/text-animation';
+@import'default/sal';
+
+
+
+/* header styles */
+@import'header/header';
+@import'header/nav';
+@import'header/mobile-menu';
+
+
+/* elements */
+@import'elements/common';
+@import'elements/button';
+@import'elements/banner';
+@import'elements/breadcrumb';
+@import'elements/brand';
+@import'elements/heading';
+@import'elements/pricing';
+@import'elements/service';
+@import'elements/about';
+@import'elements/working-process';
+@import'elements/counterup';
+@import'elements/testimonials';
+@import'elements/blog';
+@import'elements/blog-inner';
+@import'elements/subscribe';
+@import'elements/footer';
+@import'elements/features';
+@import'elements/social';
+@import'elements/back-to-top';
+@import'elements/appoinment';
+@import'elements/team';
+@import'elements/cta';
+@import'elements/contact';
+@import'elements/seo-optimization';
+@import'elements/portfolio';
+@import'elements/case-studies';
+@import'elements/faq';
+@import'elements/business-solution';
+@import'elements/why-choose';
+@import'elements/gallery';
+@import'elements/video';
+@import'elements/customer';
+@import'elements/image';
+@import'elements/rtl';
+@import'elements/responsive';
+@import'elements/responsive-rtl';

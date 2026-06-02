@@ -1,0 +1,96 @@
+.customer-left-image-area {
+    padding-right: 45px;
+
+    img {
+        border-radius: 30px;
+    }
+}
+
+.customer-right-content-area {
+    .section-title-area {
+        margin-bottom: 30px;
+
+        .section-title {
+            line-height: 1.2;
+
+            .gradient-text {
+                font-weight: inherit;
+            }
+        }
+    }
+
+    .desc {
+        font-size: 22px;
+        line-height: 1.5;
+        margin-bottom: 45px;
+    }
+}
+
+.customer-success-image-area {
+    position: relative;
+    z-index: 1;
+
+    .customer-success-image {
+        overflow: hidden;
+        border-radius: 30px;
+
+        .customer-video-area {
+            position: absolute;
+            bottom: 0;
+            background: var(--color-white);
+            padding: 28px 50px 20px 0;
+            border-top-right-radius: 30px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                background: transparent;
+                border-bottom-left-radius: 25px;
+                left: 0;
+                bottom: 76px;
+                box-shadow: -30px 0 0 0 var(--color-white);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 50px;
+                width: 50px;
+                background: transparent;
+                border-bottom-left-radius: 30px;
+                bottom: -1px;
+                right: -50px;
+                box-shadow: -25px 0 0 0 var(--color-white);
+            }
+
+            .play-btn {
+                font-size: 24px;
+                font-family: var(--font-primary);
+                font-weight: 500;
+                line-height: 1;
+                color: var(--color-body-1);
+
+                img {
+                    margin-right: 10px;
+                }
+
+            }
+        }
+    }
+}
+
+.customer-success-content {
+    padding-left: 35px;
+
+    .section-title-area {
+        margin-bottom: 30px;
+    }
+
+    .desc {
+        font-size: 22px;
+        line-height: 1.5;
+        max-width: 540px;
+    }
+}

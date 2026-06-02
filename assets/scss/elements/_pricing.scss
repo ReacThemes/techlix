@@ -1,0 +1,755 @@
+.pricing-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 56px 46px 56px 56px;
+    background: var(--color-gray);
+    border-radius: 16px;
+    margin-bottom: 40px;
+    position: sticky;
+    top: 100px;
+    z-index: 11;
+    overflow: hidden;
+
+    .price {
+        display: flex;
+        align-items: end;
+        gap: 30px;
+
+        .price-amount {
+            color: var(--color-heading-1);
+            font-size: 80px;
+            line-height: 1;
+            font-family: var(--font-primary);
+            font-weight: 800;
+        }
+
+        .price-period {
+            color: var(--color-body-1);
+            font-size: 34px;
+            line-height: 1;
+            font-weight: 500;
+        }
+    }
+
+    .feature-list {
+        padding: 0;
+        margin: 0;
+        margin-right: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+
+        li {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            font-size: 22px;
+            line-height: 1;
+            font-weight: 500;
+        }
+    }
+
+    .tag {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 75px;
+        padding: 23px 33px;
+        background: var(--color-white);
+        margin-bottom: 0;
+        border-radius: 0 0 20px 20px;
+
+        span {
+            font-size: 30px;
+            font-weight: 700;
+            font-family: var(--font-primary);
+            text-transform: uppercase;
+            line-height: 1;
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            position: absolute;
+            left: -60px;
+            top: 0px;
+            box-shadow: 42px 0 0 0 var(--color-white);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-bottom-right-radius: 20px;
+            transform: rotate(180deg);
+            position: absolute;
+            right: -60px;
+            top: 0;
+            box-shadow: 42px 0 0 0 var(--color-white);
+        }
+    }
+
+    .shape {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+    }
+
+    &.mid {
+        background: var(--gradient-primary);
+
+        .price {
+            .price-amount {
+                color: var(--color-white);
+            }
+
+            .price-period {
+                color: var(--color-white);
+            }
+        }
+
+        .feature-list {
+            li {
+                color: var(--color-white);
+            }
+        }
+    }
+}
+
+.rts-pricing-area.area-2 {
+    position: relative;
+    z-index: 1;
+
+    .section-inner {
+        max-width: 1090px;
+        margin: auto;
+        margin-top: 60px;
+    }
+}
+
+// ── Pricing Wrapper (card) ───────────────
+.pricing-wrapper2 {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 120px 56px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background: #1F1F1F;
+    transition: var(--transition);
+
+    // ── Plan tag (top badge) ─────────────
+    .tag {
+        position: absolute;
+        top: 0;
+        left: 70px;
+        background: #111111;
+        border-radius: 0 0 16px 16px;
+        padding: 22px 30px;
+        margin: 0;
+        z-index: 2;
+        white-space: nowrap;
+
+        span.gradient-text {
+            font-family: var(--font-primary);
+            font-size: 30px;
+            font-weight: var(--p-bold);
+            text-transform: uppercase;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            position: absolute;
+            left: -60px;
+            top: 0px;
+            box-shadow: 42px 0 0 0 #111111;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-bottom-right-radius: 20px;
+            transform: rotate(180deg);
+            position: absolute;
+            right: -60px;
+            top: 0;
+            box-shadow: 42px 0 0 0 #111111;
+        }
+    }
+
+    // ── Price block ──────────────────────
+    .price {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: baseline;
+        gap: 30px;
+
+        .price-amount {
+            font-family: var(--font-primary);
+            font-size: 80px;
+            font-weight: var(--p-black);
+            color: var(--color-white);
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .price-period {
+            font-family: var(--font-secondary);
+            font-size: 34px;
+            font-weight: var(--p-regular);
+            color: var(--color-gray);
+            line-height: 1;
+        }
+    }
+
+    // ── Feature list ────────────────────
+    .feature-list {
+        position: relative;
+        z-index: 2;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 33px;
+            font-family: var(--font-secondary);
+            font-size: 22px;
+            font-weight: var(--p-regular);
+            color: var(--color-white);
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    // ── Button area ──────────────────────
+    .button-area {
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+
+        .rts-btn.border-btn {
+            &::after {
+                background: #1F1F1F;
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: var(--gradient-primary);
+                justify-content: center;
+                transition: var(--transition);
+            }
+        }
+    }
+
+    // ── Shape decoration ────────────────
+    .shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    // ── Responsive padding ───────────────
+    @media #{$lg-layout} {
+        padding: 90px 28px 44px;
+
+        .price .price-amount {
+            font-size: 76px;
+        }
+    }
+
+    @media #{$md-layout} {
+        padding: 90px 32px 44px;
+    }
+
+    @media #{$sm-layout} {
+        padding: 90px 28px 40px;
+    }
+
+    &.gradient-bg {
+        .button-area {
+            .rts-btn.border-btn {
+                color: #333333;
+                &:hover{
+                    color: var(--color-white);
+                }
+                &::after {
+                    background: var(--color-white);
+                }
+            }
+        }
+    }
+}
+
+// ── Pricing Wrapper (card) ───────────────
+.pricing-wrapper3 {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 120px 56px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background: var(--color-gray);
+    transition: var(--transition);
+
+    // ── Plan tag (top badge) ─────────────
+    .tag {
+        position: absolute;
+        top: 0;
+        left: 70px;
+        background: var(--color-white);
+        border-radius: 0 0 16px 16px;
+        padding: 22px 30px;
+        margin: 0;
+        z-index: 2;
+        white-space: nowrap;
+
+        span.gradient-text {
+            font-family: var(--font-primary);
+            font-size: 30px;
+            font-weight: var(--p-bold);
+            text-transform: uppercase;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            position: absolute;
+            left: -60px;
+            top: 0px;
+            box-shadow: 42px 0 0 0 var(--color-white);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-bottom-right-radius: 20px;
+            transform: rotate(180deg);
+            position: absolute;
+            right: -60px;
+            top: 0;
+            box-shadow: 42px 0 0 0 var(--color-white);
+        }
+    }
+
+    // ── Price block ──────────────────────
+    .price {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: baseline;
+        gap: 30px;
+
+        .price-amount {
+            font-family: var(--font-primary);
+            font-size: 80px;
+            font-weight: var(--p-black);
+            color: #111111;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .price-period {
+            font-family: var(--font-secondary);
+            font-size: 34px;
+            font-weight: var(--p-regular);
+            color: #111111;
+            line-height: 1;
+        }
+    }
+
+    // ── Feature list ────────────────────
+    .feature-list {
+        position: relative;
+        z-index: 2;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 33px;
+            font-family: var(--font-secondary);
+            font-size: 22px;
+            font-weight: var(--p-regular);
+            color: #111111;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    // ── Button area ──────────────────────
+    .button-area {
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+
+        .rts-btn.border-btn {
+            &::after {
+                background: var(--color-gray);
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: var(--gradient-primary);
+                justify-content: center;
+                transition: var(--transition);
+            }
+        }
+    }
+
+    // ── Shape decoration ────────────────
+    .shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    // ── Responsive padding ───────────────
+    @media #{$lg-layout} {
+        padding: 90px 28px 44px;
+
+        .price .price-amount {
+            font-size: 76px;
+        }
+    }
+
+    @media #{$md-layout} {
+        padding: 90px 32px 44px;
+    }
+
+    @media #{$sm-layout} {
+        padding: 90px 28px 40px;
+    }
+
+    &.gradient-bg {
+        .price {
+
+            .price-amount,
+            .price-period {
+                color: var(--color-white);
+            }
+        }
+
+        .feature-list {
+            li {
+                color: var(--color-white);
+            }
+        }
+
+        .button-area {
+            .rts-btn.border-btn {
+                color: #333333;
+
+                &::after {
+                    background: var(--color-white);
+                }
+                &:hover{
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+    &.dark-bg {
+        background: #0F0F0F;
+        .price {
+
+            .price-amount,
+            .price-period {
+                color: var(--color-white);
+            }
+        }
+
+        .feature-list {
+            li {
+                color: var(--color-white);
+            }
+        }
+
+        .button-area {
+            .rts-btn.border-btn {
+                color: #333333;
+
+                &::after {
+                    background: var(--color-white);
+                }
+                &:hover{
+                    color: var(--color-white);
+                }
+            }
+        }
+    }
+}
+
+// ── Pricing Wrapper (card) ───────────────
+.pricing-wrapper4 {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 120px 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background: var(--color-gray);
+    transition: var(--transition);
+
+    // ── Plan tag (top badge) ─────────────
+    .tag {
+        position: absolute;
+        top: 0;
+        left: 70px;
+        background: var(--color-white);
+        border-radius: 0 0 16px 16px;
+        padding: 22px 30px;
+        margin: 0;
+        z-index: 2;
+        white-space: nowrap;
+
+        span.gradient-text {
+            font-family: var(--font-primary);
+            font-size: 30px;
+            font-weight: var(--p-bold);
+            text-transform: uppercase;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-top-right-radius: 20px;
+            position: absolute;
+            left: -60px;
+            top: 0px;
+            box-shadow: 42px 0 0 0 var(--color-white);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            height: 60px;
+            width: 60px;
+            background: transparent;
+            border-bottom-right-radius: 20px;
+            transform: rotate(180deg);
+            position: absolute;
+            right: -60px;
+            top: 0;
+            box-shadow: 42px 0 0 0 var(--color-white);
+        }
+    }
+
+    // ── Price block ──────────────────────
+    .price {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: baseline;
+        gap: 30px;
+
+        .price-amount {
+            font-family: var(--font-primary);
+            font-size: 80px;
+            font-weight: var(--p-black);
+            color: #111111;
+            line-height: 1;
+            letter-spacing: -2px;
+        }
+
+        .price-period {
+            font-family: var(--font-secondary);
+            font-size: 34px;
+            font-weight: var(--p-regular);
+            color: #111111;
+            line-height: 1;
+        }
+    }
+
+    // ── Feature list ────────────────────
+    .feature-list {
+        position: relative;
+        z-index: 2;
+        list-style: none;
+        margin: 0;
+        padding: 36px 30px !important;
+        background: var(--color-white);
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 33px;
+            font-family: var(--font-secondary);
+            font-size: 22px;
+            font-weight: var(--p-regular);
+            color: #111111;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    // ── Button area ──────────────────────
+    .button-area {
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+
+        .rts-btn.border-btn {
+            &::after {
+                background: var(--color-gray);
+            }
+
+            .icon {
+                display: flex;
+                align-items: center;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: var(--gradient-primary);
+                justify-content: center;
+                transition: var(--transition);
+            }
+        }
+    }
+
+    // ── Shape decoration ────────────────
+    .shape {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    // ── Responsive padding ───────────────
+    @media #{$lg-layout} {
+        padding: 90px 20px 44px;
+
+        .price .price-amount {
+            font-size: 76px;
+        }
+    }
+
+    @media #{$md-layout} {
+        padding: 90px 32px 44px;
+    }
+
+    @media #{$sm-layout} {
+        padding: 90px 28px 40px;
+    }
+
+    &.gradient-bg {
+        background: #111111 !important;
+
+        .feature-list {
+            background: var(--gradient-primary);
+            padding:36px 25px 36px !important;
+        }
+
+        .price {
+
+            .price-amount,
+            .price-period {
+                color: var(--color-white);
+            }
+        }
+
+        .feature-list {
+            li {
+                color: var(--color-white);
+            }
+        }
+
+        .button-area {
+            .rts-btn.border-btn {
+                color: #333333;
+                &:hover{
+                    color: var(--color-white);
+                }
+
+                &::after {
+                    background: var(--color-white);
+                }
+            }
+        }
+    }
+}

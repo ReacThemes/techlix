@@ -1,0 +1,96 @@
+.counter-wrapper {
+    padding: 85px 0 85px 60px;
+
+    .counter-item {
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+
+        .title {
+            color: #242424;
+            background: var(--color-white);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-stroke: 2px transparent;
+            font-size: 66px;
+            line-height: 1;
+            margin-bottom: 10px;
+
+            span {
+                min-width: max-content;
+                margin-right: 2px;
+            }
+        }
+
+        .text {
+            font-size: 20px;
+            font-family: var(--font-primary);
+            color: var(--color-body-1);
+        }
+    }
+}
+
+.counter-wrapper-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+    .single-counter {
+        background: var(--color-gray);
+        border-radius: 30px;
+        padding: 35px 20px 25px;
+        text-align: center;
+
+        .title {
+            font-size: 50px;
+            line-height: 1;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .text {
+            font-size: 20px;
+            font-family: var(--font-primary);
+            color: var(--color-body-1);
+        }
+    }
+}
+
+.rts-counter-area.inner {
+    .section-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .counter-area {
+            text-align: center;
+
+            .title {
+                -webkit-text-stroke: 3px transparent;
+                color: var(--color-white);
+                margin-bottom: 10px;
+
+                span {
+                    font-weight: var(--p-bold);
+                    line-height: 1;
+                    background: linear-gradient(90deg, #A53E1B 0%, #173998 100%);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-stroke: 3px transparent;
+                    min-width: max-content;
+                    margin-right: 2px;
+                }
+            }
+
+            p.text {
+                color: #333333;
+                font-size: 20px;
+                font-family: var(--font-primary);
+            }
+        }
+    }
+}

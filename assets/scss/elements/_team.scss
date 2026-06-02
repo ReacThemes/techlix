@@ -1,0 +1,523 @@
+.teamSlider {
+    margin: 0 80px;
+}
+
+// ── Card shell (3-D flip container) ─────
+.team-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    // ── Front face ──────────────────────
+    &__front {
+        position: relative;
+        transition: var(--transition);
+
+        // Bottom gradient scrim
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top,
+                    rgba(165, 62, 27, 0.88) 0%,
+                    rgba(100, 30, 10, 0.45) 35%,
+                    transparent 65%);
+            border-radius: inherit;
+        }
+    }
+
+    // ── Back face ───────────────────────
+    &__back {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 36px 30px 36px;
+        opacity: 0;
+        transition: var(--transition);
+        background: linear-gradient(0.48deg, #A53E1B -0.93%, #173998 99.6%);
+
+    }
+
+    // ── Hover state — swap faces ─────────
+    &:hover {
+        .team-card__front {
+            opacity: 0;
+            transform: translateY(0);
+            z-index: 1;
+        }
+
+        .team-card__back {
+            opacity: 1;
+            z-index: 2;
+        }
+    }
+
+    // ── Thumb (photo) ────────────────────
+    &__thumb {
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: var(--transition);
+        }
+    }
+
+    &:hover &__thumb img {}
+
+    // ── Shared info block (name + role) ──
+    &__info {
+        position: relative;
+        z-index: 3;
+    }
+
+    // Front — info pinned to bottom
+    &__info {
+        position: absolute;
+        bottom: 36px;
+        left: 30px;
+        right: 30px;
+    }
+
+    // Back — info pinned to bottom (flex child)
+    &__back &__info {
+        margin-top: auto;
+    }
+
+    &__name {
+        font-family: var(--font-primary);
+        font-size: var(--h6);
+        font-weight: var(--p-bold);
+        color: var(--color-white);
+        line-height: 1.2;
+        margin-bottom: 6px;
+    }
+
+    &__role {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-b1);
+        font-weight: var(--p-regular);
+        color: rgba(255, 255, 255, 0.72);
+        display: block;
+    }
+
+    // ── Bio text (back only) ─────────────
+    &__bio {
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-b2);
+        font-weight: var(--p-regular);
+        color: rgba(255, 255, 255, 0.9);
+        line-height: var(--line-height-b3);
+        margin: 0 0 30px;
+    }
+
+    // ── Social icons (back only) ─────────
+    &__social {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        li {
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 52px;
+                height: 52px;
+                border-radius: 10px;
+                background: rgba(255, 255, 255, 0.12);
+                color: var(--color-white);
+                font-size: 17px;
+                text-decoration: none;
+                transition: var(--transition);
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.25);
+                }
+            }
+        }
+    }
+
+    // ── Responsive tweaks ────────────────
+    @media #{$sm-layout} {
+        &__front &__info {
+            bottom: 24px;
+            left: 20px;
+            right: 20px;
+        }
+
+        &__back {
+            padding: 24px 20px;
+        }
+
+        &__bio {
+            font-size: var(--font-size-b1);
+        }
+
+        &__social li a {
+            width: 44px;
+            height: 44px;
+        }
+    }
+}
+
+.rts-team-wrapper {
+    background: var(--color-gray);
+    border-radius: 20px;
+    padding: 40px 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    .bg-blur-shape {
+        position: absolute;
+        width: 538px;
+        height: 505px;
+        background: linear-gradient(90deg, rgba(165, 62, 27, 0.5) 0%, rgba(255, 255, 0, 0.5) 100%);
+        opacity: 0.15;
+        filter: blur(50px);
+        z-index: -1;
+
+        &.one {
+            bottom: -28%;
+            left: -16.5%;
+        }
+
+        &.two {
+            top: -30%;
+            right: -8%;
+
+        }
+    }
+
+    .team-left-content {
+        .section-title-area {
+            margin-bottom: 30px;
+        }
+
+        .desc {
+            font-size: 22px;
+            font-family: var(--font-primary);
+            font-weight: var(--p-regular);
+            line-height: 1.5;
+        }
+    }
+
+    .team-right-image {
+        padding-left: 40px;
+    }
+}
+
+.rts-team-area.inner {
+    .section-inner {
+        position: relative;
+        z-index: 1;
+        padding-bottom: 60px;
+    }
+
+    .slider-dots2 {
+        position: absolute;
+        z-index: 1;
+        left: unset;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        max-width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            margin: 0;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            background: transparent;
+            opacity: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                width: 19px;
+                height: 19px;
+                border-radius: 50%;
+                background: var(--color-white);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                transition: var(--transition);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--gradient-primary);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                transition: var(--transition);
+            }
+
+            &.swiper-pagination-bullet-active {
+                background: var(--gradient-primary);
+
+                &::after {
+                    background: var(--gradient-primary);
+                }
+            }
+        }
+    }
+}
+
+.team-wrapper2 {
+    .team-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+
+        // ── Front face ──────────────────────
+        &__front {
+            position: relative;
+            transition: var(--transition);
+
+            // Bottom gradient scrim
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to top,
+                        rgba(165, 62, 27, 0.88) 0%,
+                        rgba(100, 30, 10, 0.45) 35%,
+                        transparent 65%);
+                border-radius: inherit;
+            }
+        }
+
+        // ── Back face ───────────────────────
+        &__back {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 36px 30px 36px;
+            opacity: 0;
+            transition: var(--transition);
+            background: linear-gradient(0.48deg, #A53E1B -0.93%, #173998 99.6%);
+            text-align: center;
+            align-items: center;
+
+        }
+
+        // ── Hover state — swap faces ─────────
+        &:hover {
+            .team-card__front {
+                opacity: 0;
+                transform: translateY(0);
+                z-index: 1;
+            }
+
+            .team-card__back {
+                opacity: 1;
+                z-index: 2;
+            }
+        }
+
+        // ── Thumb (photo) ────────────────────
+        &__thumb {
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+                display: block;
+                transition: var(--transition);
+            }
+        }
+
+        &:hover &__thumb img {}
+
+        // ── Shared info block (name + role) ──
+        &__info {
+            position: relative;
+            z-index: 3;
+        }
+
+        // Front — info pinned to bottom
+        &__info {
+            position: absolute;
+            bottom: 36px;
+            left: 30px;
+            right: 30px;
+            text-align: center;
+        }
+
+        // Back — info pinned to bottom (flex child)
+        &__back &__info {
+            margin-top: auto;
+        }
+
+        &__name {
+            font-family: var(--font-primary);
+            font-size: var(--h6);
+            font-weight: var(--p-bold);
+            color: var(--color-white);
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+
+        &__role {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-b1);
+            font-weight: var(--p-regular);
+            color: rgba(255, 255, 255, 0.72);
+            display: block;
+        }
+
+        // ── Bio text (back only) ─────────────
+        &__bio {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-b2);
+            font-weight: var(--p-regular);
+            color: rgba(255, 255, 255, 0.9);
+            line-height: var(--line-height-b3);
+            margin: 0 0 30px;
+        }
+
+        // ── Social icons (back only) ─────────
+        &__social {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            li {
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 52px;
+                    height: 52px;
+                    border-radius: 10px;
+                    background: rgba(255, 255, 255, 0.12);
+                    color: var(--color-white);
+                    font-size: 17px;
+                    text-decoration: none;
+                    transition: var(--transition);
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.25);
+                    }
+                }
+            }
+        }
+
+        // ── Responsive tweaks ────────────────
+        @media #{$sm-layout} {
+            &__front &__info {
+                bottom: 24px;
+                left: 20px;
+                right: 20px;
+            }
+
+            &__back {
+                padding: 24px 20px;
+            }
+
+            &__bio {
+                font-size: var(--font-size-b1);
+            }
+
+            &__social li a {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    }
+}
+
+.rts-team-area.inner2 {
+    margin: 0 80px;
+}
+
+
+.rts-team-area.area-6 {
+    .slider-dots {
+        margin: 50px auto 0;
+        max-width: max-content;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            margin: 0;
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+            background: transparent;
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                width: 19px;
+                height: 19px;
+                border-radius: 50%;
+                background: #111111;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                transition: var(--transition);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--gradient-primary);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                transition: var(--transition);
+            }
+
+            &.swiper-pagination-bullet-active {
+                background: var(--gradient-primary);
+
+                &::after {
+                    background: var(--gradient-primary);
+                }
+            }
+        }
+    }
+}
