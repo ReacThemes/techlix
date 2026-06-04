@@ -182,6 +182,16 @@
         background: linear-gradient(180deg, rgba(18, 17, 18, 0) 12.86%, #A03E20 100%);
         z-index: 2;
     }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(18, 17, 18, 0) 0%, #111111 100%);
+        z-index: 3;
+    }
     .section-title-area {
         display: flex;
         align-items: end;

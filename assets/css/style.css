@@ -21616,7 +21616,7 @@ body.overflow-x-visible {
   overflow: hidden;
 }
 .rts-cta-wrapper .cta-content-area {
-  padding: 80px 97px;
+  padding: 75px 97px;
 }
 .rts-cta-wrapper .cta-image-area {
   position: relative;
@@ -23585,6 +23585,16 @@ body.overflow-x-visible {
   bottom: 0;
   background: linear-gradient(180deg, rgba(18, 17, 18, 0) 12.86%, #A03E20 100%);
   z-index: 2;
+}
+.rts-gallery-area::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(18, 17, 18, 0) 0%, #111111 100%);
+  z-index: 3;
 }
 .rts-gallery-area .section-title-area {
   display: flex;
