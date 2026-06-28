@@ -379,6 +379,42 @@
 
                         .nav-item {
                             width: 18.5%;
+                            position: relative;
+                            z-index: 1;
+                            transition: var(--transition);
+                            &:hover{
+                                .btn-link-area{
+                                    opacity: 1;
+                                }
+                                .nav-link{
+                                    &::before{
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                            .btn-link-area{
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                width: 100%;
+                                z-index: 2;
+                                transform: translate(-50%, -50%);
+                                max-width: 150px;
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                opacity: 0;
+                                transition: var(--transition);
+                                .rts-btn{
+                                    max-width: 100%;
+                                    width: 100%;
+                                    text-align: center;
+                                    justify-content: center;
+                                    padding: 8px 20px;
+                                    border-radius: 10px;
+                                }
+                            }
 
                             &:hover {
                                 .nav-link {
@@ -386,7 +422,6 @@
                                     box-shadow: 0px 20px 20px 0px rgba(154.70000000000002, 154.36369565217393, 154.36369565217393, 0.15);
                                 }
                             }
-
                             .nav-link {
                                 padding: 10px;
                                 border-radius: 10px;
@@ -398,7 +433,15 @@
                                 flex-direction: column;
                                 gap: 15px;
                                 font-size: 16px;
-
+                                &::before{
+                                    content: '';
+                                    position: absolute;
+                                    z-index: 1;
+                                    background: rgba(255, 255, 255, 0.5);
+                                    inset: 0;
+                                    opacity: 0;
+                                    transition: var(--transition);
+                                }
                                 img {
                                     border-radius: 10px;
                                 }

@@ -1645,6 +1645,15 @@
           closeMobileMenu();
       });
 
+      $(document).on('click', '.at-offcanvas-menu a', function () {
+          const $link = $(this);
+          const isDropdownToggle = $link.parent().hasClass('has-dropdown') && $link.siblings('.at-submenu').length;
+
+          if (!isDropdownToggle && $main_wrap.hasClass('menu-open')) {
+              closeMobileMenu();
+          }
+      });
+
       $(window).on('resize.mobileMenu', function () {
           if (window.innerWidth >= mobileMenuBreakpoint && $main_wrap.hasClass('menu-open')) {
               closeMobileMenu();

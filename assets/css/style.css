@@ -12246,6 +12246,38 @@ body.sal-disabled [data-sal|=flip] {
 }
 .main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item {
   width: 18.5%;
+  position: relative;
+  z-index: 1;
+  transition: var(--transition);
+}
+.main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item:hover .btn-link-area {
+  opacity: 1;
+}
+.main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item:hover .nav-link::before {
+  opacity: 1;
+}
+.main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item .btn-link-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  max-width: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: var(--transition);
+}
+.main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item .btn-link-area .rts-btn {
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 8px 20px;
+  border-radius: 10px;
 }
 .main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item:hover .nav-link {
   background: var(--color-white);
@@ -12262,6 +12294,15 @@ body.sal-disabled [data-sal|=flip] {
   flex-direction: column;
   gap: 15px;
   font-size: 16px;
+}
+.main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+  inset: 0;
+  opacity: 0;
+  transition: var(--transition);
 }
 .main-nav-area ul.rts-desktop-menu .rts-has-dropdown .rts-submenu.menu-home .nav-item .nav-link img {
   border-radius: 10px;
@@ -22138,6 +22179,11 @@ body.overflow-x-visible {
 .rts-sign-in-wrapper .signup-text a {
   color: var(--color-heading-1);
   font-weight: var(--p-medium);
+}
+
+.rts-contact-area.dark .rts-contact-form-area {
+  height: 100%;
+  padding: 40px 40px;
 }
 
 .project-wrapper {
